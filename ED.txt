@@ -1,0 +1,162 @@
+public class ABB {
+
+       private int total;
+
+       private No raiz;
+
+     void remover(int x){
+       No aux = buscar(x);
+       No ant = null;
+       while(atual !=null){
+          if( x == atual.valor){
+             if( x == atual.valor){
+               if(atual == raiz){
+                    raiz=  remove_no(atual);
+              }
+              else if(ant.esq == atual){
+              ant.esq = remove_no(atual); 
+              }  
+              else if(ant.dir == atual){
+               ant.dir = remove_no(atual);
+              }
+               break;
+          }
+          ant = atual;  
+          }else if(x < atual.valor){
+           atual = atual.esq;
+          }else if(x < atual.valor){
+           atual =  atual.dir;
+          }     
+        }
+    }
+ 
+    No remove_no(No atual){
+       No no1;
+       No no2;
+       if(atual.esq == null){
+        no1 = atual.dir;
+        return no1;
+       }
+        no2 = atual.esq;
+        while(no2.dir != null){
+             no2 = no2.dir;
+
+        }  
+        //no2 com o atual
+        // remover o no2
+         
+        return null;
+       }
+
+
+
+
+
+      No Buscar(int x){
+         No aux = raiz;
+      while(aux != null)
+           if(x == aux.valor){
+             return aux;
+       }else  if( x < aux.valor){
+           aux = aux.esq;
+       }else if (x> aux.valor){
+           aux = aux.dir;
+
+           }
+       }
+         return null;
+}
+
+       void InOrdem(){
+
+       inOrdem(raiz);
+
+
+
+       }
+
+
+
+       void inOrdem(No p){
+
+       if(p!=null){
+
+       inOrdem(p.esq);
+
+       system.out.println(p.valor);
+
+       inOrdem(p.dir);
+
+       }
+
+       }
+
+
+
+
+
+       void Inserir(int x){
+
+       if(raiz==null)
+
+       No p=new No();
+
+           p.valor = x;
+
+           raiz = p;
+
+           total++;
+
+       }else{
+
+       inserir(x, raiz);
+
+
+
+       }
+
+
+
+        void Inserir(int x, No p){
+
+     if(x <= p.valor){
+
+     if(p.esq == null){
+
+     No k = new No();
+
+     K.valor = x;
+
+     p.esq = k;
+
+     total++;
+
+     }else{
+
+     inserir(x,p.esq);
+
+     }
+
+     }else  if(x > p.valor){
+
+     if(p.dir = null){
+
+     No K =new No();
+
+     k.valor = x;
+
+     p.dir = k;
+
+     total++;
+
+     }else{
+
+     inserir(x,p.dir);
+
+     }
+
+
+
+
+
+     }
